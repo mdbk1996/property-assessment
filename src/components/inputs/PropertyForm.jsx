@@ -2,20 +2,20 @@ import { SectionHeader } from '../primitives/SectionHeader.jsx';
 import { formatCurrency } from '../../utils/formatters.js';
 
 const inputStyle = {
-  background: '#080603',
-  border: '1px solid #2a2018',
+  background: '#100e09',
+  border: '1px solid #352a1a',
   borderRadius: '6px',
-  color: '#f0e6d0',
+  color: '#f8f2e4',
   fontSize: '14px',
   padding: '8px 12px',
   width: '100%',
-  fontFamily: "'DM Sans', sans-serif",
+  fontFamily: "'Nunito', sans-serif",
   outline: 'none',
 };
 
 const labelStyle = {
   fontSize: '11px',
-  color: '#6b5c47',
+  color: '#8a7458',
   textTransform: 'uppercase',
   letterSpacing: '0.06em',
   marginBottom: '5px',
@@ -58,7 +58,7 @@ export function PropertyForm({ state, update }) {
   }
 
   return (
-    <div style={{ background: '#0e0b06', border: '1px solid #2a2018', borderRadius: '10px', padding: '22px 24px' }}>
+    <div style={{ background: '#181410', border: '1px solid #352a1a', borderRadius: '10px', padding: '22px 24px' }}>
       <SectionHeader icon="📍">Property Details</SectionHeader>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -112,15 +112,15 @@ export function PropertyForm({ state, update }) {
 
         <Field label="Listing Price">
           <div style={{ position: 'relative' }}>
-            <span style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#a89070', fontSize: '14px' }}>$</span>
+            <span style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#c8a87a', fontSize: '14px' }}>$</span>
             <input
-              style={{ ...inputStyle, paddingLeft: '24px', fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: '#d4a843' }}
+              style={{ ...inputStyle, paddingLeft: '24px', fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: '#f5c444' }}
               value={listingPrice ? listingPrice.toLocaleString() : ''}
               onChange={handleListingPriceChange}
               placeholder="0"
             />
           </div>
-          <div style={{ fontSize: '11px', color: '#6b5c47', marginTop: '4px' }}>
+          <div style={{ fontSize: '11px', color: '#8a7458', marginTop: '4px' }}>
             Sets purchase price slider range (±30%)
           </div>
         </Field>

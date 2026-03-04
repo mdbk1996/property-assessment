@@ -23,16 +23,16 @@ export function RentalIncomePanel({ state, update, grossRent }) {
     letterSpacing: '0.04em',
     textTransform: 'uppercase',
     transition: 'all 0.2s',
-    background: active ? '#d4a843' : 'transparent',
-    color: active ? '#0c0a05' : '#6b5c47',
+    background: active ? '#f5c444' : 'transparent',
+    color: active ? '#111009' : '#8a7458',
   });
 
   return (
-    <div style={{ background: '#0e0b06', border: '1px solid #2a2018', borderRadius: '10px', padding: '22px 24px' }}>
+    <div style={{ background: '#181410', border: '1px solid #352a1a', borderRadius: '10px', padding: '22px 24px' }}>
       <SectionHeader icon="🏡">Rental Income</SectionHeader>
 
       {/* Toggle */}
-      <div style={{ display: 'flex', background: '#080603', border: '1px solid #2a2018', borderRadius: '24px', padding: '3px', marginBottom: '20px', width: 'fit-content' }}>
+      <div style={{ display: 'flex', background: '#100e09', border: '1px solid #352a1a', borderRadius: '24px', padding: '3px', marginBottom: '20px', width: 'fit-content' }}>
         <button style={pillStyle(rentalMode === 'room')} onClick={() => update({ rentalMode: 'room' })}>
           Room by Room
         </button>
@@ -70,9 +70,9 @@ export function RentalIncomePanel({ state, update, grossRent }) {
         />
       )}
 
-      <div style={{ borderTop: '1px solid #2a2018', paddingTop: '14px', marginTop: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <span style={{ fontSize: '12px', color: '#6b5c47', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Gross Monthly Rent</span>
-        <span style={{ fontSize: '26px', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: '#d4a843' }}>{formatCurrency(grossRent)}/mo</span>
+      <div style={{ borderTop: '1px solid #352a1a', paddingTop: '14px', marginTop: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span style={{ fontSize: '12px', color: '#8a7458', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Gross Monthly Rent</span>
+        <span style={{ fontSize: '26px', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: '#f5c444' }}>{formatCurrency(grossRent)}/mo</span>
       </div>
     </div>
   );

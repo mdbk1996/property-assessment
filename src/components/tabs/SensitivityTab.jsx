@@ -48,8 +48,8 @@ export function SensitivityTab({ state, update }) {
   const baseCellCol = 2;
 
   const selectStyle = {
-    background: '#080603', border: '1px solid #2a2018', borderRadius: '6px',
-    color: '#f0e6d0', fontSize: '13px', padding: '6px 10px', fontFamily: "'DM Sans', sans-serif",
+    background: '#100e09', border: '1px solid #352a1a', borderRadius: '6px',
+    color: '#f8f2e4', fontSize: '13px', padding: '6px 10px', fontFamily: "'Nunito', sans-serif",
     cursor: 'pointer', outline: 'none',
   };
 
@@ -58,7 +58,7 @@ export function SensitivityTab({ state, update }) {
       {/* Controls */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', marginBottom: '24px' }}>
         <div>
-          <div style={{ fontSize: '11px', color: '#6b5c47', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>X Axis (columns)</div>
+          <div style={{ fontSize: '11px', color: '#8a7458', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>X Axis (columns)</div>
           <select style={selectStyle} value={sensitivityXVar} onChange={(e) => update({ sensitivityXVar: e.target.value })}>
             {Object.entries(SENSITIVITY_VARS).map(([k, v]) => (
               <option key={k} value={k}>{v.label}</option>
@@ -66,7 +66,7 @@ export function SensitivityTab({ state, update }) {
           </select>
         </div>
         <div>
-          <div style={{ fontSize: '11px', color: '#6b5c47', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>Y Axis (rows)</div>
+          <div style={{ fontSize: '11px', color: '#8a7458', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>Y Axis (rows)</div>
           <select style={selectStyle} value={sensitivityYVar} onChange={(e) => update({ sensitivityYVar: e.target.value })}>
             {Object.entries(SENSITIVITY_VARS).map(([k, v]) => (
               <option key={k} value={k}>{v.label}</option>
@@ -74,7 +74,7 @@ export function SensitivityTab({ state, update }) {
           </select>
         </div>
         <div>
-          <div style={{ fontSize: '11px', color: '#6b5c47', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>Output Metric</div>
+          <div style={{ fontSize: '11px', color: '#8a7458', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>Output Metric</div>
           <select style={selectStyle} value={sensitivityOutputVar} onChange={(e) => update({ sensitivityOutputVar: e.target.value })}>
             {Object.entries(SENSITIVITY_OUTPUTS).map(([k, v]) => (
               <option key={k} value={k}>{v.label}</option>
@@ -89,13 +89,13 @@ export function SensitivityTab({ state, update }) {
           <thead>
             <tr>
               <td style={{ padding: '4px 8px' }}>
-                <div style={{ fontSize: '10px', color: '#4a3c2e' }}>{yMeta.label} ↓ / {xMeta.label} →</div>
+                <div style={{ fontSize: '10px', color: '#6a5848' }}>{yMeta.label} ↓ / {xMeta.label} →</div>
               </td>
               {matrix.xValues.map((xv, ci) => (
                 <th key={ci} style={{
-                  padding: '6px 10px', fontSize: '11px', color: '#a89070',
+                  padding: '6px 10px', fontSize: '11px', color: '#c8a87a',
                   fontWeight: ci === baseCellCol ? 700 : 400,
-                  borderBottom: ci === baseCellCol ? '2px solid #d4a843' : 'none',
+                  borderBottom: ci === baseCellCol ? '2px solid #f5c444' : 'none',
                 }}>
                   {formatByKey(xv, xMeta.format)}
                 </th>
@@ -106,9 +106,9 @@ export function SensitivityTab({ state, update }) {
             {matrix.yValues.map((yv, ri) => (
               <tr key={ri}>
                 <th style={{
-                  padding: '6px 10px', fontSize: '11px', color: '#a89070', textAlign: 'right',
+                  padding: '6px 10px', fontSize: '11px', color: '#c8a87a', textAlign: 'right',
                   fontWeight: ri === baseCellRow ? 700 : 400,
-                  borderRight: ri === baseCellRow ? '2px solid #d4a843' : 'none',
+                  borderRight: ri === baseCellRow ? '2px solid #f5c444' : 'none',
                 }}>
                   {formatByKey(yv, yMeta.format)}
                 </th>
@@ -126,7 +126,7 @@ export function SensitivityTab({ state, update }) {
                         color: '#fff',
                         fontWeight: isBase ? 700 : 400,
                         fontSize: isBase ? '13px' : '12px',
-                        outline: isBase ? '2px solid #d4a843' : 'none',
+                        outline: isBase ? '2px solid #f5c444' : 'none',
                         outlineOffset: isBase ? '1px' : '0',
                         opacity: 0.9,
                         fontFamily: "'Cormorant Garamond', serif",
@@ -145,17 +145,17 @@ export function SensitivityTab({ state, update }) {
       <div style={{ marginTop: '14px', display: 'flex', gap: '16px', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
           <div style={{ width: '12px', height: '12px', background: 'rgb(220,80,80)', borderRadius: '2px' }} />
-          <span style={{ fontSize: '11px', color: '#6b5c47' }}>Unfavorable</span>
+          <span style={{ fontSize: '11px', color: '#8a7458' }}>Unfavorable</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
           <div style={{ width: '12px', height: '12px', background: 'rgb(220,186,80)', borderRadius: '2px' }} />
-          <span style={{ fontSize: '11px', color: '#6b5c47' }}>Neutral</span>
+          <span style={{ fontSize: '11px', color: '#8a7458' }}>Neutral</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
           <div style={{ width: '12px', height: '12px', background: 'rgb(80,186,125)', borderRadius: '2px' }} />
-          <span style={{ fontSize: '11px', color: '#6b5c47' }}>Favorable</span>
+          <span style={{ fontSize: '11px', color: '#8a7458' }}>Favorable</span>
         </div>
-        <span style={{ fontSize: '11px', color: '#4a3c2e', marginLeft: '8px' }}>Gold outline = current inputs</span>
+        <span style={{ fontSize: '11px', color: '#6a5848', marginLeft: '8px' }}>Gold outline = current inputs</span>
       </div>
     </>
   );

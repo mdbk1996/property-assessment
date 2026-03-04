@@ -21,7 +21,7 @@ export function RightPanel({ state, update, calc, rentcastHook }) {
       <RentalIncomePanel state={state} update={update} grossRent={grossRent} />
 
       {/* Strategy Tabs */}
-      <div style={{ background: '#0e0b06', border: '1px solid #2a2018', borderRadius: '10px', overflow: 'hidden' }}>
+      <div style={{ background: '#181410', border: '1px solid #352a1a', borderRadius: '10px', overflow: 'hidden' }}>
         <TabBar activeTab={activeTab} setActiveTab={(t) => update({ activeTab: t })} />
         <div style={{ padding: '22px 24px' }}>
           {activeTab === 'flip'        && <FlipTab state={state} update={update} calc={calc} />}
@@ -34,7 +34,7 @@ export function RightPanel({ state, update, calc, rentcastHook }) {
       </div>
 
       {/* Key Metrics Summary Bar */}
-      <div style={{ background: '#0e0b06', border: '1px solid #2a2018', borderRadius: '10px', padding: '18px 24px' }}>
+      <div style={{ background: '#181410', border: '1px solid #352a1a', borderRadius: '10px', padding: '18px 24px' }}>
         <SectionHeader icon="📊">Key Metrics Summary</SectionHeader>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '12px' }}>
           <MetricCard label="Monthly Mortgage" value={formatCurrency(monthlyMortgage)} sub="P&I only" />

@@ -9,7 +9,7 @@ const TABS = [
 
 export function TabBar({ activeTab, setActiveTab }) {
   return (
-    <div style={{ borderBottom: '1px solid #2a2018', display: 'flex', flexWrap: 'wrap', gap: '0' }}>
+    <div style={{ borderBottom: '1px solid #352a1a', display: 'flex', flexWrap: 'wrap', gap: '0' }}>
       {TABS.map((t) => (
         <button
           key={t.id}
@@ -22,8 +22,8 @@ export function TabBar({ activeTab, setActiveTab }) {
             fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '0.06em',
-            color: activeTab === t.id ? '#d4a843' : '#6b5c47',
-            borderBottom: activeTab === t.id ? '2px solid #d4a843' : '2px solid transparent',
+            color: activeTab === t.id ? '#f5c444' : '#8a7458',
+            borderBottom: activeTab === t.id ? '2px solid #f5c444' : '2px solid transparent',
             fontFamily: "'Cormorant Garamond', serif",
             fontWeight: 600,
             transition: 'all 0.2s',

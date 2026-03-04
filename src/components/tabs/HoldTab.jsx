@@ -27,8 +27,8 @@ export function HoldTab({ state, update, calc }) {
       </div>
 
       {/* Monthly P&L */}
-      <div style={{ background: '#080603', border: '1px solid #2a2018', borderRadius: '8px', padding: '16px 20px', marginBottom: '16px' }}>
-        <div style={{ fontSize: '11px', color: '#6b5c47', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>Monthly P&L</div>
+      <div style={{ background: '#100e09', border: '1px solid #352a1a', borderRadius: '8px', padding: '16px 20px', marginBottom: '16px' }}>
+        <div style={{ fontSize: '11px', color: '#8a7458', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>Monthly P&L</div>
         {[
           ['Gross Rent', grossRent, true],
           ['Vacancy Loss', -vacancyLoss, false],
@@ -40,13 +40,13 @@ export function HoldTab({ state, update, calc }) {
           ['Property Mgmt', -propMgmtCost, false],
         ].map(([lbl, val, isIncome]) => (
           <div key={lbl} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', marginBottom: '6px' }}>
-            <span style={{ color: '#6b5c47' }}>{lbl}</span>
-            <span style={{ color: isIncome ? '#5cba7d' : val < 0 ? '#c07070' : '#a89070' }}>{formatCurrency(val)}</span>
+            <span style={{ color: '#8a7458' }}>{lbl}</span>
+            <span style={{ color: isIncome ? '#52d68c' : val < 0 ? '#d47878' : '#c8a87a' }}>{formatCurrency(val)}</span>
           </div>
         ))}
-        <div style={{ borderTop: '1px solid #2a2018', marginTop: '8px', paddingTop: '8px', display: 'flex', justifyContent: 'space-between', fontSize: '15px', fontWeight: 600 }}>
-          <span style={{ color: '#a89070' }}>Monthly Cash Flow</span>
-          <span style={{ color: holdCashFlow >= 0 ? '#5cba7d' : '#e05c5c' }}>{formatCurrency(holdCashFlow)}</span>
+        <div style={{ borderTop: '1px solid #352a1a', marginTop: '8px', paddingTop: '8px', display: 'flex', justifyContent: 'space-between', fontSize: '15px', fontWeight: 600 }}>
+          <span style={{ color: '#c8a87a' }}>Monthly Cash Flow</span>
+          <span style={{ color: holdCashFlow >= 0 ? '#52d68c' : '#f06464' }}>{formatCurrency(holdCashFlow)}</span>
         </div>
       </div>
 

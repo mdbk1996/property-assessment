@@ -53,23 +53,23 @@ export function BrrrrTab({ state, update, calc }) {
       </div>
 
       {/* Step-by-step breakdown */}
-      <div style={{ background: '#080603', border: '1px solid #2a2018', borderRadius: '8px', padding: '16px 20px', marginBottom: '16px' }}>
-        <div style={{ fontSize: '11px', color: '#6b5c47', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '14px' }}>BRRRR Breakdown</div>
+      <div style={{ background: '#100e09', border: '1px solid #352a1a', borderRadius: '8px', padding: '16px 20px', marginBottom: '16px' }}>
+        <div style={{ fontSize: '11px', color: '#8a7458', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '14px' }}>BRRRR Breakdown</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {steps.map((s, i) => (
             <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#1a1208', border: '1px solid #2a2018', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '16px' }}>
+              <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#1e160a', border: '1px solid #352a1a', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '16px' }}>
                 {s.icon}
               </div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: '12px', color: '#a89070', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{s.label}</div>
-                <div style={{ fontSize: '11px', color: '#4a3c2e' }}>{s.detail}</div>
+                <div style={{ fontSize: '12px', color: '#c8a87a', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{s.label}</div>
+                <div style={{ fontSize: '11px', color: '#6a5848' }}>{s.detail}</div>
               </div>
-              <div style={{ fontSize: '16px', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, color: s.label === 'Cash Out' && cashPulledOut >= 0 ? '#5cba7d' : '#f0e6d0' }}>
+              <div style={{ fontSize: '16px', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, color: s.label === 'Cash Out' && cashPulledOut >= 0 ? '#52d68c' : '#f8f2e4' }}>
                 {s.value}
               </div>
               {i < steps.length - 1 && (
-                <div style={{ position: 'absolute', left: '35px', marginTop: '32px', width: '2px', height: '10px', background: '#2a2018' }} />
+                <div style={{ position: 'absolute', left: '35px', marginTop: '32px', width: '2px', height: '10px', background: '#352a1a' }} />
               )}
             </div>
           ))}
@@ -78,9 +78,9 @@ export function BrrrrTab({ state, update, calc }) {
 
       {/* Full Recovery Badge */}
       {fullRecovery && (
-        <div style={{ background: 'linear-gradient(135deg, #0a1f0a, #0d2a0d)', border: '1px solid #5cba7d', borderRadius: '8px', padding: '14px 20px', marginBottom: '16px', textAlign: 'center' }}>
+        <div style={{ background: 'linear-gradient(135deg, #0a1f0a, #0d2a0d)', border: '1px solid #52d68c', borderRadius: '8px', padding: '14px 20px', marginBottom: '16px', textAlign: 'center' }}>
           <div style={{ fontSize: '20px', marginBottom: '4px' }}>✅</div>
-          <div style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: '#5cba7d', fontSize: '18px' }}>Full Capital Recovery</div>
+          <div style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: '#52d68c', fontSize: '18px' }}>Full Capital Recovery</div>
           <div style={{ fontSize: '12px', color: '#3a6b3a', marginTop: '4px' }}>All cash pulled back out — infinite CoC return</div>
         </div>
       )}

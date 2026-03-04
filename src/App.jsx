@@ -51,7 +51,7 @@ export default function App() {
   const marketData = rentcastHook.data?.market ?? null;
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0c0a05', fontFamily: "'DM Sans', sans-serif", color: '#f0e6d0' }}>
+    <div style={{ minHeight: '100vh', background: '#111009', fontFamily: "'Nunito', sans-serif", color: '#f8f2e4' }}>
 
       {/* Header */}
       <Header
@@ -65,8 +65,8 @@ export default function App() {
       {saveMsg && (
         <div style={{
           position: 'fixed', bottom: '24px', right: '24px', zIndex: 999,
-          background: '#1f1608', border: '1px solid #d4a843', borderRadius: '8px',
-          padding: '12px 20px', fontSize: '13px', color: '#d4a843',
+          background: '#261a0a', border: '1px solid #f5c444', borderRadius: '8px',
+          padding: '12px 20px', fontSize: '13px', color: '#f5c444',
         }}>
           ✓ {saveMsg}
         </div>

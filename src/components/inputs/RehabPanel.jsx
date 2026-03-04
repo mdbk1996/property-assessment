@@ -24,11 +24,11 @@ export function RehabPanel({ state, update, rehabCost }) {
   const tierBtnStyle = (active) => ({
     flex: 1,
     padding: '8px 4px',
-    background: active ? 'linear-gradient(135deg, #1f1608, #2d1e08)' : '#080603',
-    border: `1px solid ${active ? '#d4a843' : '#2a2018'}`,
+    background: active ? 'linear-gradient(135deg, #261a0a, #332209)' : '#100e09',
+    border: `1px solid ${active ? '#f5c444' : '#352a1a'}`,
     borderRadius: '6px',
     cursor: 'pointer',
-    color: active ? '#d4a843' : '#6b5c47',
+    color: active ? '#f5c444' : '#8a7458',
     fontSize: '11px',
     textTransform: 'uppercase',
     letterSpacing: '0.04em',
@@ -37,12 +37,12 @@ export function RehabPanel({ state, update, rehabCost }) {
   });
 
   return (
-    <div style={{ background: '#0e0b06', border: '1px solid #2a2018', borderRadius: '10px', padding: '22px 24px' }}>
+    <div style={{ background: '#181410', border: '1px solid #352a1a', borderRadius: '10px', padding: '22px 24px' }}>
       <SectionHeader icon="🔨">Rehab / Renovation</SectionHeader>
 
       {/* Tier selector */}
       <div style={{ marginBottom: '16px' }}>
-        <div style={{ fontSize: '11px', color: '#6b5c47', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>Condition Tier</div>
+        <div style={{ fontSize: '11px', color: '#8a7458', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>Condition Tier</div>
         <div style={{ display: 'flex', gap: '6px' }}>
           {Object.entries(REHAB_TIERS).map(([key, t]) => (
             <button key={key} style={tierBtnStyle(rehabCondition === key)} onClick={() => selectTier(key)}>
@@ -51,7 +51,7 @@ export function RehabPanel({ state, update, rehabCost }) {
             </button>
           ))}
         </div>
-        <div style={{ fontSize: '11px', color: '#6b5c47', marginTop: '6px', fontStyle: 'italic' }}>
+        <div style={{ fontSize: '11px', color: '#8a7458', marginTop: '6px', fontStyle: 'italic' }}>
           {REHAB_TIERS[rehabCondition]?.description}
         </div>
       </div>
@@ -72,16 +72,16 @@ export function RehabPanel({ state, update, rehabCost }) {
 
       {/* Manual override */}
       <div style={{ marginBottom: '16px' }}>
-        <div style={{ fontSize: '11px', color: '#6b5c47', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
-          Total Cost Override {rehabCostManual ? <span style={{ color: '#d4a843' }}>(active)</span> : <span>(optional)</span>}
+        <div style={{ fontSize: '11px', color: '#8a7458', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
+          Total Cost Override {rehabCostManual ? <span style={{ color: '#f5c444' }}>(active)</span> : <span>(optional)</span>}
         </div>
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
           <div style={{ position: 'relative', flex: 1 }}>
-            <span style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: '#a89070', fontSize: '13px' }}>$</span>
+            <span style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: '#c8a87a', fontSize: '13px' }}>$</span>
             <input
               style={{
-                background: '#080603', border: `1px solid ${rehabCostManual ? '#d4a843' : '#2a2018'}`, borderRadius: '6px',
-                color: '#f0e6d0', fontSize: '15px', padding: '8px 10px 8px 22px', width: '100%',
+                background: '#100e09', border: `1px solid ${rehabCostManual ? '#f5c444' : '#352a1a'}`, borderRadius: '6px',
+                color: '#f8f2e4', fontSize: '15px', padding: '8px 10px 8px 22px', width: '100%',
                 fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, outline: 'none',
               }}
               placeholder="Leave blank to use /sqft"
@@ -92,7 +92,7 @@ export function RehabPanel({ state, update, rehabCost }) {
           {rehabCostManual != null && (
             <button
               onClick={() => update({ rehabCostManual: null })}
-              style={{ background: 'none', border: '1px solid #2a2018', borderRadius: '6px', color: '#6b5c47', padding: '8px 12px', cursor: 'pointer', fontSize: '12px' }}
+              style={{ background: 'none', border: '1px solid #352a1a', borderRadius: '6px', color: '#8a7458', padding: '8px 12px', cursor: 'pointer', fontSize: '12px' }}
             >
               Clear
             </button>
@@ -112,9 +112,9 @@ export function RehabPanel({ state, update, rehabCost }) {
       />
 
       {/* Summary */}
-      <div style={{ borderTop: '1px solid #2a2018', paddingTop: '12px', marginTop: '4px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <span style={{ fontSize: '12px', color: '#6b5c47', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Total Rehab Cost</span>
-        <span style={{ fontSize: '22px', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: '#d4a843' }}>{formatCurrency(rehabCost)}</span>
+      <div style={{ borderTop: '1px solid #352a1a', paddingTop: '12px', marginTop: '4px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span style={{ fontSize: '12px', color: '#8a7458', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Total Rehab Cost</span>
+        <span style={{ fontSize: '22px', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: '#f5c444' }}>{formatCurrency(rehabCost)}</span>
       </div>
     </div>
   );

@@ -49,8 +49,8 @@ export function FlipTab({ state, update, calc }) {
       </div>
 
       {/* Cost Breakdown */}
-      <div style={{ background: '#080603', border: '1px solid #2a2018', borderRadius: '8px', padding: '16px 20px', marginBottom: '16px' }}>
-        <div style={{ fontSize: '11px', color: '#6b5c47', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>Cost Breakdown</div>
+      <div style={{ background: '#100e09', border: '1px solid #352a1a', borderRadius: '8px', padding: '16px 20px', marginBottom: '16px' }}>
+        <div style={{ fontSize: '11px', color: '#8a7458', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>Cost Breakdown</div>
         {[
           ['Purchase Price', purchasePrice],
           ['Closing Costs', closingCosts],
@@ -60,13 +60,13 @@ export function FlipTab({ state, update, calc }) {
           ['Selling Costs', sellingCosts],
         ].map(([lbl, val]) => (
           <div key={lbl} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', marginBottom: '6px' }}>
-            <span style={{ color: '#6b5c47' }}>{lbl}</span>
-            <span style={{ color: '#a89070' }}>{formatCurrency(val)}</span>
+            <span style={{ color: '#8a7458' }}>{lbl}</span>
+            <span style={{ color: '#c8a87a' }}>{formatCurrency(val)}</span>
           </div>
         ))}
-        <div style={{ borderTop: '1px solid #2a2018', marginTop: '8px', paddingTop: '8px', display: 'flex', justifyContent: 'space-between', fontSize: '14px', fontWeight: 600 }}>
-          <span style={{ color: '#a89070' }}>Total All-In</span>
-          <span style={{ color: '#f0e6d0' }}>{formatCurrency(totalFlipCost + sellingCosts)}</span>
+        <div style={{ borderTop: '1px solid #352a1a', marginTop: '8px', paddingTop: '8px', display: 'flex', justifyContent: 'space-between', fontSize: '14px', fontWeight: 600 }}>
+          <span style={{ color: '#c8a87a' }}>Total All-In</span>
+          <span style={{ color: '#f8f2e4' }}>{formatCurrency(totalFlipCost + sellingCosts)}</span>
         </div>
       </div>
 

@@ -29,7 +29,7 @@ export function MarketRiskFlags({ marketData }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
       {flags.map((f, i) => (
-        <div key={i} style={{ background: '#1a0e08', border: '1px solid #5c3a1a', borderRadius: '6px', padding: '10px 14px', display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '12px', color: '#d4a843' }}>
+        <div key={i} style={{ background: '#1a0e08', border: '1px solid #5c3a1a', borderRadius: '6px', padding: '10px 14px', display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '12px', color: '#f5c444' }}>
           <span style={{ flexShrink: 0 }}>{f.icon}</span>
           <span>{f.message}</span>
         </div>
