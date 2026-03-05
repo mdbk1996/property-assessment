@@ -4,7 +4,7 @@ export function CollapsiblePanel({ title, icon, children, defaultOpen = false, b
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div style={{ background: '#181410', border: '1px solid #352a1a', borderRadius: '10px', overflow: 'hidden' }}>
+    <div style={{ background: '#ede6d8', border: '1px solid #c8b890', borderRadius: '10px', overflow: 'hidden' }}>
       <button
         onClick={() => setOpen((o) => !o)}
         style={{
@@ -14,12 +14,12 @@ export function CollapsiblePanel({ title, icon, children, defaultOpen = false, b
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           {icon && <span style={{ fontSize: '16px' }}>{icon}</span>}
-          <span style={{ fontSize: '13px', color: '#c8a87a', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}>{title}</span>
+          <span style={{ fontSize: '13px', color: '#5c4028', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}>{title}</span>
           {badge && (
-            <span style={{ fontSize: '11px', background: '#352a1a', color: '#f5c444', borderRadius: '4px', padding: '2px 8px' }}>{badge}</span>
+            <span style={{ fontSize: '11px', background: '#c8b890', color: '#9a6e0c', borderRadius: '4px', padding: '2px 8px' }}>{badge}</span>
           )}
         </div>
-        <span style={{ color: '#8a7458', fontSize: '12px', transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>▼</span>
+        <span style={{ color: '#7a5c38', fontSize: '12px', transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>▼</span>
       </button>
       {open && (
         <div style={{ padding: '4px 20px 20px' }}>

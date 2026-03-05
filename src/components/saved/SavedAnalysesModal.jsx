@@ -58,42 +58,42 @@ export function SavedAnalysesModal({ onLoad, onClose }) {
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <div style={{
-        background: '#181410', border: '1px solid #352a1a', borderRadius: '12px',
+        background: '#ede6d8', border: '1px solid #c8b890', borderRadius: '12px',
         padding: '28px', width: '100%', maxWidth: '600px', maxHeight: '80vh',
         display: 'flex', flexDirection: 'column', gap: '16px',
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ fontSize: '20px', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: '#f8f2e4' }}>
+          <div style={{ fontSize: '20px', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: '#1c1508' }}>
             Saved Analyses
           </div>
-          <button onClick={onClose} style={{ background: 'none', border: 'none', color: '#8a7458', cursor: 'pointer', fontSize: '20px' }}>✕</button>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', color: '#7a5c38', cursor: 'pointer', fontSize: '20px' }}>✕</button>
         </div>
 
         <div style={{ overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {analyses.length === 0 && (
-            <div style={{ textAlign: 'center', color: '#6a5848', padding: '32px', fontSize: '13px' }}>
+            <div style={{ textAlign: 'center', color: '#9a7a58', padding: '32px', fontSize: '13px' }}>
               No saved analyses yet. Use "Save Analysis" to store your current inputs.
             </div>
           )}
           {analyses.map((a) => (
-            <div key={a.id} style={{ background: '#100e09', border: '1px solid #1e160a', borderRadius: '8px', padding: '14px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div key={a.id} style={{ background: '#e4dccb', border: '1px solid #e0d4bc', borderRadius: '8px', padding: '14px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
-                <div style={{ fontSize: '14px', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, color: '#f8f2e4', marginBottom: '2px' }}>{a.name}</div>
-                <div style={{ fontSize: '11px', color: '#6a5848' }}>
+                <div style={{ fontSize: '14px', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, color: '#1c1508', marginBottom: '2px' }}>{a.name}</div>
+                <div style={{ fontSize: '11px', color: '#9a7a58' }}>
                   {new Date(a.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                   {' · '}{formatCurrency(a.purchasePrice)}
                 </div>
                 <div style={{ fontSize: '11px', marginTop: '3px' }}>
-                  <span style={{ color: a.flipProfit > 0 ? '#52d68c' : '#f06464' }}>Flip: {formatCurrency(a.flipProfit)}</span>
-                  <span style={{ color: '#6a5848', margin: '0 6px' }}>·</span>
-                  <span style={{ color: a.holdCashFlow > 0 ? '#52d68c' : '#f06464' }}>CF: {formatCurrency(a.holdCashFlow)}/mo</span>
+                  <span style={{ color: a.flipProfit > 0 ? '#1a7a38' : '#b02020' }}>Flip: {formatCurrency(a.flipProfit)}</span>
+                  <span style={{ color: '#9a7a58', margin: '0 6px' }}>·</span>
+                  <span style={{ color: a.holdCashFlow > 0 ? '#1a7a38' : '#b02020' }}>CF: {formatCurrency(a.holdCashFlow)}/mo</span>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '8px' }}>
-                <button onClick={() => handleLoad(a)} style={{ padding: '6px 14px', background: 'linear-gradient(135deg, #c49020, #f5c444)', border: 'none', borderRadius: '5px', color: '#111009', cursor: 'pointer', fontSize: '11px', fontWeight: 600 }}>
+                <button onClick={() => handleLoad(a)} style={{ padding: '6px 14px', background: 'linear-gradient(135deg, #7a5400, #9a6e0c)', border: 'none', borderRadius: '5px', color: '#f8f3ea', cursor: 'pointer', fontSize: '11px', fontWeight: 600 }}>
                   Load
                 </button>
-                <button onClick={() => handleDelete(a.id)} style={{ padding: '6px 10px', background: 'none', border: '1px solid #352a1a', borderRadius: '5px', color: '#8a7458', cursor: 'pointer', fontSize: '11px' }}>
+                <button onClick={() => handleDelete(a.id)} style={{ padding: '6px 10px', background: 'none', border: '1px solid #c8b890', borderRadius: '5px', color: '#7a5c38', cursor: 'pointer', fontSize: '11px' }}>
                   ✕
                 </button>
               </div>
@@ -101,7 +101,7 @@ export function SavedAnalysesModal({ onLoad, onClose }) {
           ))}
         </div>
 
-        <div style={{ fontSize: '11px', color: '#6a5848', textAlign: 'right' }}>
+        <div style={{ fontSize: '11px', color: '#9a7a58', textAlign: 'right' }}>
           {analyses.length} / {MAX_SAVED} slots used
         </div>
       </div>

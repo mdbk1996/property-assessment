@@ -13,7 +13,7 @@ export function CompsPanel({ state, update, rentcastHook }) {
     fetchAll({ address, city, state: state.state, zip, bedCount });
   }
 
-  const usageColor = remaining <= 10 ? '#f06464' : remaining <= 20 ? '#f5c444' : '#52d68c';
+  const usageColor = remaining <= 10 ? '#b02020' : remaining <= 20 ? '#9a6e0c' : '#1a7a38';
 
   return (
     <CollapsiblePanel
@@ -25,17 +25,17 @@ export function CompsPanel({ state, update, rentcastHook }) {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', paddingTop: '8px' }}>
         <div style={{ fontSize: '12px', color: usageColor }}>
           {usage.count} / {MONTHLY_LIMIT} calls used this month
-          {remaining < 4 && <span style={{ color: '#f06464', marginLeft: '8px' }}>⚠ Limit reached</span>}
+          {remaining < 4 && <span style={{ color: '#b02020', marginLeft: '8px' }}>⚠ Limit reached</span>}
         </div>
         <button
           onClick={handleFetch}
           disabled={loading || !canFetch}
           style={{
             padding: '8px 20px',
-            background: canFetch && !loading ? 'linear-gradient(135deg, #c49020, #f5c444)' : '#352a1a',
+            background: canFetch && !loading ? 'linear-gradient(135deg, #7a5400, #9a6e0c)' : '#c8b890',
             border: 'none',
             borderRadius: '6px',
-            color: canFetch && !loading ? '#111009' : '#8a7458',
+            color: canFetch && !loading ? '#f8f3ea' : '#7a5c38',
             cursor: canFetch && !loading ? 'pointer' : 'not-allowed',
             fontSize: '12px',
             fontWeight: 600,
@@ -49,13 +49,13 @@ export function CompsPanel({ state, update, rentcastHook }) {
       </div>
 
       {error && (
-        <div style={{ background: '#1a0808', border: '1px solid #5c1a1a', borderRadius: '6px', padding: '10px 14px', marginBottom: '14px', fontSize: '12px', color: '#f06464' }}>
+        <div style={{ background: '#fce0e0', border: '1px solid #d05050', borderRadius: '6px', padding: '10px 14px', marginBottom: '14px', fontSize: '12px', color: '#b02020' }}>
           ⚠ {error}
         </div>
       )}
 
       {!data && !loading && !error && (
-        <div style={{ textAlign: 'center', padding: '20px', color: '#6a5848', fontSize: '13px' }}>
+        <div style={{ textAlign: 'center', padding: '20px', color: '#9a7a58', fontSize: '13px' }}>
           Fetches rental comps, sale comps, AVM valuation, and market stats for {address || 'the entered address'}.
           <br />
           Uses 4 API calls per fetch.
@@ -67,7 +67,7 @@ export function CompsPanel({ state, update, rentcastHook }) {
           {/* Summary cards */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
             {data.medianRent && (
-              <SummaryCard label="Median Rent" value={formatCurrency(data.medianRent) + '/mo'} accent="#52d68c"
+              <SummaryCard label="Median Rent" value={formatCurrency(data.medianRent) + '/mo'} accent="#1a7a38"
                 action="Use" onAction={() => update({ wholeUnitRent: data.medianRent, rentalMode: 'unit' })} />
             )}
             {data.avm?.price && (
@@ -79,7 +79,7 @@ export function CompsPanel({ state, update, rentcastHook }) {
             )}
             {data.market?.averageDaysOnMarket && (
               <SummaryCard label="Avg DOM" value={`${data.market.averageDaysOnMarket} days`}
-                accent={data.market.averageDaysOnMarket > 60 ? '#f06464' : '#c8a87a'} />
+                accent={data.market.averageDaysOnMarket > 60 ? '#b02020' : '#5c4028'} />
             )}
             {data.medianPricePerSqft && (
               <SummaryCard label="Median $/sqft" value={`$${Math.round(data.medianPricePerSqft)}/sqft`}
@@ -98,16 +98,16 @@ export function CompsPanel({ state, update, rentcastHook }) {
   );
 }
 
-function SummaryCard({ label, value, sub, accent = '#f5c444', action, onAction }) {
+function SummaryCard({ label, value, sub, accent = '#9a6e0c', action, onAction }) {
   return (
-    <div style={{ background: '#100e09', border: '1px solid #352a1a', borderRadius: '8px', padding: '12px 14px' }}>
-      <div style={{ fontSize: '10px', color: '#8a7458', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '4px' }}>{label}</div>
+    <div style={{ background: '#e4dccb', border: '1px solid #c8b890', borderRadius: '8px', padding: '12px 14px' }}>
+      <div style={{ fontSize: '10px', color: '#7a5c38', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '4px' }}>{label}</div>
       <div style={{ fontSize: '18px', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: accent }}>{value}</div>
-      {sub && <div style={{ fontSize: '10px', color: '#6a5848', marginTop: '2px' }}>{sub}</div>}
+      {sub && <div style={{ fontSize: '10px', color: '#9a7a58', marginTop: '2px' }}>{sub}</div>}
       {action && (
         <button onClick={onAction} style={{
-          marginTop: '6px', fontSize: '10px', background: 'none', border: '1px solid #352a1a',
-          borderRadius: '4px', color: '#c8a87a', padding: '3px 8px', cursor: 'pointer',
+          marginTop: '6px', fontSize: '10px', background: 'none', border: '1px solid #c8b890',
+          borderRadius: '4px', color: '#5c4028', padding: '3px 8px', cursor: 'pointer',
           textTransform: 'uppercase', letterSpacing: '0.04em',
         }}>
           {action}

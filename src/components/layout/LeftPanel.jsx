@@ -22,7 +22,7 @@ export function LeftPanel({ state, update, calc }) {
       <PropertyForm state={state} update={update} />
 
       {/* Acquisition */}
-      <div style={{ background: '#181410', border: '1px solid #352a1a', borderRadius: '10px', padding: '22px 24px' }}>
+      <div style={{ background: '#ede6d8', border: '1px solid #c8b890', borderRadius: '10px', padding: '22px 24px' }}>
         <SectionHeader icon="🏠">Acquisition</SectionHeader>
         <SliderRow label="Purchase Price" value={purchasePrice} min={priceMin} max={priceMax} step={5000} onChange={(v) => update({ purchasePrice: v })} format={formatCurrency} />
         <SliderRow label="Down Payment" value={downPct} min={5} max={40} step={1} onChange={(v) => update({ downPct: v })} format={(v) => `${v}%`} sub={`${formatCurrency(downPayment)} cash down`} />
@@ -32,7 +32,7 @@ export function LeftPanel({ state, update, calc }) {
       </div>
 
       {/* Taxes & Fixed */}
-      <div style={{ background: '#181410', border: '1px solid #352a1a', borderRadius: '10px', padding: '22px 24px' }}>
+      <div style={{ background: '#ede6d8', border: '1px solid #c8b890', borderRadius: '10px', padding: '22px 24px' }}>
         <SectionHeader icon="🧾">Taxes & Fixed Costs</SectionHeader>
         <SliderRow label="Property Tax Rate" value={propTaxRate} min={0.5} max={2.5} step={0.05} onChange={(v) => update({ propTaxRate: parseFloat(v.toFixed(2)) })} format={(v) => `${v.toFixed(2)}%`} sub={`${formatCurrency(annualPropTax)}/yr`} />
         <SliderRow label="Special Assessments" value={specialAssessments} min={0} max={10000} step={100} onChange={(v) => update({ specialAssessments: v })} format={(v) => `${formatCurrency(v)}/yr`} />
@@ -40,7 +40,7 @@ export function LeftPanel({ state, update, calc }) {
       </div>
 
       {/* OpEx */}
-      <div style={{ background: '#181410', border: '1px solid #352a1a', borderRadius: '10px', padding: '22px 24px' }}>
+      <div style={{ background: '#ede6d8', border: '1px solid #c8b890', borderRadius: '10px', padding: '22px 24px' }}>
         <SectionHeader icon="⚙️">Operating Expenses</SectionHeader>
         <SliderRow label="Insurance" value={insurance} min={50} max={1000} step={25} onChange={(v) => update({ insurance: v })} format={(v) => `${formatCurrency(v)}/mo`} />
         <SliderRow label="Maintenance" value={maintenance} min={100} max={2000} step={50} onChange={(v) => update({ maintenance: v })} format={(v) => `${formatCurrency(v)}/mo`} />
