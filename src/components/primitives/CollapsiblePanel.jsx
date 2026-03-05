@@ -1,12 +1,22 @@
 import { useState } from 'react';
 
-export function CollapsiblePanel({ title, icon, children, defaultOpen = false, badge }) {
-  const [open, setOpen] = useState(defaultOpen);
+export function CollapsiblePanel({ title, icon, children, defaultOpen = false, badge, open: controlledOpen, onToggle }) {
+  const [internalOpen, setInternalOpen] = useState(defaultOpen);
+  const isControlled = controlledOpen !== undefined;
+  const open = isControlled ? controlledOpen : internalOpen;
+
+  function handleToggle() {
+    if (isControlled) {
+      onToggle?.(!open);
+    } else {
+      setInternalOpen((o) => !o);
+    }
+  }
 
   return (
     <div style={{ background: '#ede6d8', border: '1px solid #c8b890', borderRadius: '10px', overflow: 'hidden' }}>
       <button
-        onClick={() => setOpen((o) => !o)}
+        onClick={handleToggle}
         style={{
           width: '100%', background: 'none', border: 'none', cursor: 'pointer',
           padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
