@@ -13,19 +13,28 @@ export function FlipTab({ state, update, calc }) {
   const { purchasePrice } = state;
   const netProceeds = arv - sellingCosts;
 
+  // Slider range anchored to purchase price
+  const arvMin = Math.max(50000, Math.round(purchasePrice * 0.5 / 5000) * 5000);
+  const arvMax = Math.round(purchasePrice * 3 / 5000) * 5000;
+
+  function handleArvChange(v) {
+    // Keep arvPerSqft in sync so all downstream calcs stay consistent
+    update({ arvPerSqft: sqft > 0 ? parseFloat((v / sqft).toFixed(2)) : arvPerSqft });
+  }
+
   return (
     <>
       {/* ARV / Sale Price */}
       <div style={{ marginBottom: '20px' }}>
         <SliderRow
-          label="Sale Price / sqft (ARV)"
-          value={arvPerSqft}
-          min={50}
-          max={800}
-          step={5}
-          onChange={(v) => update({ arvPerSqft: v })}
-          format={(v) => `$${v}/sqft`}
-          sub={`Projected sale price: ${formatCurrency(arv)}`}
+          label="Projected Sale Price"
+          value={arv}
+          min={arvMin}
+          max={arvMax}
+          step={5000}
+          onChange={handleArvChange}
+          format={formatCurrency}
+          sub={sqft > 0 ? `$${Math.round(arv / sqft)}/sqft` : undefined}
         />
         <SliderRow
           label="Selling Costs"
