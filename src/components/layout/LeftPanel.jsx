@@ -13,8 +13,8 @@ export function LeftPanel({ state, update, calc }) {
 
   const { downPayment, closingCosts, annualPropTax, propMgmtCost, vacancyLoss } = calc;
 
-  const priceMin = Math.round(listingPrice * 0.7 / 5000) * 5000;
-  const priceMax = Math.round(listingPrice * 1.3 / 5000) * 5000;
+  const priceMin = 200000;
+  const priceMax = 1500000;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
